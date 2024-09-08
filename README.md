@@ -232,5 +232,46 @@ logger.log_error('This is an error message.')
 logger.log_critical('This is a critical message.')
 ```
 
+### **Exemple 6**
+
+```python
+# Import the necessary classes from the scret library
+from scret import ScretMeAPI, UserAgentManager, ScretMeProxy
+
+def main():
+    # Set up the user details and message
+    user_slug = 'example_user'  # Replace with the target user slug
+    message = 'Hello from Scret.me library!'  # Replace with the message you want to send
+
+    # Create an instance of UserAgentManager to manage user agents
+    user_agent_manager = UserAgentManager()
+    
+    # Optionally set a custom user agent (or use a random one)
+    custom_user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
+    user_agent_manager.set_custom_user_agent(custom_user_agent)
+    
+    # Create an instance of ScretMeAPI
+    api = ScretMeAPI(user_slug=user_slug, message=message)
+    
+    # Set the user agent for the API request
+    api.set_custom_user_agent(user_agent_manager.get_current_user_agent())
+    
+    # Optionally configure a proxy (if needed)
+    # Uncomment and set your proxy details if you need to use a proxy
+    # proxy = ScretMeProxy(proxy='http://your.proxy:8080')
+    # api.set_proxy(proxy.get_proxy())
+
+    # Send the message
+    success = api.send_message()
+    
+    if success:
+        print('Message sent successfully!')
+    else:
+        print('Failed to send the message.')
+
+if __name__ == '__main__':
+    main()
+```
+
 ---
 # By: lalaio1
