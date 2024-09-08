@@ -234,6 +234,6 @@ logger.log_critical('This is a critical message.')
 
 ---
 
-Feel free to customize the examples and use the various components of the library according to your needs. For further questions or contributions, please refer to the library's [https://github.com/lalaio1/scret/](#) (replace with actual repository URL).
+Feel free to customize the examples and use the various components of the library according to your needs. For further questions or contributions, please refer to the library's [https://github.com/lalaio1/scret/](#).
 
 Happy coding! 🎉
